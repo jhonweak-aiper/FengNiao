@@ -91,7 +91,7 @@ struct SwiftMemberAccessSearchRule: FileSearchRule {
         let reg = try! NSRegularExpression(pattern: pattern, options: [])
         let matches = reg.matches(in: content, options: [], range: content.fullRange)
         for match in matches {
-            let identifierRange = match.range(at: 2)
+            let identifierRange = match.range(at: 1)
             guard identifierRange.location != NSNotFound else { continue }
             let identifier = nsstring.substring(with: identifierRange)
             result.insert(".\(identifier)")
