@@ -72,7 +72,9 @@ struct ObjCImageSearchRule: RegPatternSearchRule {
 
 struct SwiftImageSearchRule: RegPatternSearchRule {
     let extensions: [String]
-    let patterns = #"(?:UIImage\(named:\s*|UIImage\.init\(named:\s*)\"([^\"]+)\""#
+    let patterns = [
+        #"(?:UIImage\(named:\s*|UIImage\.init\(named:\s*)"([^"]+)"\s*\)"#
+    ]
 }
 
 /// Search for member access patterns like `.icFlag` or `UIImage.icFlag` that Xcode generates for assets.
