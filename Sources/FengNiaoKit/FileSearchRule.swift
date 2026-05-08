@@ -73,7 +73,7 @@ struct ObjCImageSearchRule: RegPatternSearchRule {
 struct SwiftImageSearchRule: RegPatternSearchRule {
     let extensions: [String]
     let patterns = [
-        #UIImage\(named:\s*"([^"]+)"#
+        #"UIImage\(named:\s*"([^"]+)"#
     ]
 }
 
