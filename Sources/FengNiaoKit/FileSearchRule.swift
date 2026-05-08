@@ -45,7 +45,11 @@ extension RegPatternSearchRule {
             let matches = reg.matches(in: content, options: [], range: content.fullRange)
             for checkingResult in matches {
                 let extracted = nsstring.substring(with: checkingResult.range(at: 1))
-                result.insert(extracted.plainFileName(extensions: extensions) )
+                print("🔍 原始提取: \(extracted)")
+                let plain = extracted.plainFileName(extensions: extensions)
+                print("📦 plain处理后: \(plain)")
+                result.insert(plain)
+                print("---")
             }
         }
         
