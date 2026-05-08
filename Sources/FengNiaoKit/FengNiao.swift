@@ -108,6 +108,9 @@ public struct FengNiao {
     
     public init(projectPath: String, excludedPaths: [String], resourceExtensions: [String], searchInFileExtensions: [String]) {
         let path = Path(projectPath).absolute()
+
+        print("here in main_init with propath \(projectPath)")
+        
         self.projectPath = path
         self.excludedPaths = excludedPaths.map { path + Path($0) }
         self.resourceExtensions = resourceExtensions
